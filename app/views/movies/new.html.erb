@@ -5,17 +5,18 @@
 <% end %>
 
 
-<%= form_with(url: movies_path) do %>
+<%= form_with(model: @movie) do |form|%>
   <div>
     <!--<label for="title_box">
-    
       Title
     </label> -->
-
     <%#= label_tag  :title, "Title"%>
-    <%= label_tag  :title %>
+    <%#= label_tag  :title %>
+    <%= form.label  :title %>
+
     <%#= text_field_tag :title, @movie.title, id: "title"  %>
-    <%= text_field_tag "movie[title]", @movie.title, id: "title"  %>
+    <%#= text_field_tag "movie[title]", @movie.title, id: "title"  %>
+    <%= form.text_field :title  %>
 
     <!--<input type="text" id="title_box" name="query_title" value="<%#= @the_movie.title %>">-->
   </div>
@@ -25,15 +26,20 @@
       Description
     </label> -->
     <%#= label_tag :description, "Description" %>
-    <%= label_tag :description %>
-    <%#= text_area_tag :description, @movie.description, id: "description", rows: 3 %>
-     <%= text_area_tag "movie[description]", @movie.description, id: "description", rows: 3 %>
+    <%#= label_tag :description %>
+    <%= form.label :description%>
+
     <!--<textarea  id="description_box" name="query_description" rows="3"><%#= @the_movie.description %></textarea>-->
+    <%#= text_area_tag :description, @movie.description, id: "description", rows: 3 %>
+    <%#= text_area_tag "movie[description]", @movie.description, id: "description", rows: 3 %>
+    <%= form.text_area :description, rows: 3 %>
   </div>
-  <%= button_tag "Create movie"%>
+
   <!--<button>
     Create movie
   </button>-->
+  <%#= button_tag "Create movie"%>
+  <%= form.button %>
 <% end %>
 
 <!--<form action="<%#= movies_path %>" method="post">
