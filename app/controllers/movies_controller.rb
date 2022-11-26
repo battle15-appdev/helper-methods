@@ -39,9 +39,10 @@ class MoviesController < ApplicationController
     #@the_movie.description = params.fetch("query_description")
 
     @movie = Movie.new
-    @movie.title = params.fetch(:title)
-    @movie.description = params.fetch(:description)
-
+    #@movie.title = params.fetch(:title)
+    @movie.title = params.fetch(:movie).fetch(:title)
+    #@movie.description = params.fetch(:description)
+    @movie.description = params.fetch(:movie).fetch(:description)
     if @movie.valid?
       @movie.save
       redirect_to movies_url, notice: "Movie created successfully." 
