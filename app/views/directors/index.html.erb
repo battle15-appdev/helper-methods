@@ -33,8 +33,42 @@
     <th>
       Updated at
     </th>    
+
+    <th>
+    
+    </th>
   </tr>
 
   <!--Loop for list of directors-->
+  <% @directors.each do |director|%>
+    <tr>
+      <td>
+        <%= director.id %>
+      </td>
 
+      <td>
+        <%= director.name %>
+      </td>
+
+      <td>
+        <%= director.dob %>
+      </td>
+
+      <td>
+        <%= director.bio %>
+      </td>
+
+      <td>
+        <%= time_ago_in_words(director.created_at) %>
+      </td>
+
+      <td>
+        <%= time_ago_in_words(director.updated_at) %>
+      </td>
+
+      <td>
+        <%= link_to "Show details", director %>
+      </td>
+    </tr>
+    <% end %>
   </table>

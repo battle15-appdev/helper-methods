@@ -12,7 +12,7 @@ class MoviesController < ApplicationController
 
     respond_to do |format|
       format.json do
-        render json: @list_of_movies
+        render json: @movies
       end
 
       format.html 
@@ -42,6 +42,7 @@ class MoviesController < ApplicationController
     #@movie = Movie.new
     #@movie.title = params.fetch(:title)
     #@movie.title = params.fetch(:movie).fetch(:title)
+
     #@movie.description = params.fetch(:description)
     #@movie.description = params.fetch(:movie).fetch(:description)
     @movie = Movie.new(movie_attributes)
