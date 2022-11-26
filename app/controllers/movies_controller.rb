@@ -75,7 +75,7 @@ class MoviesController < ApplicationController
     
     #movie.title = params.fetch(:title)
     #movie.description = params.fetch(:description)
-    movie_attributes = params.require(:movie).permit(:title, :description)
+    movie.update(params.require(:movie).permit(:title, :description))
 
 
     if movie.valid?

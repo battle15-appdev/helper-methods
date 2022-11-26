@@ -4,30 +4,37 @@
   <p style="color: red;"><%= message %></p>
 <% end %>
 
-<%= form_with(url: movie_path(@movie), method: :patch) do %>
+
 <!--<form action="<%#= movie_path(@the_movie)%>" method="post">
   <input name="authenticity_token" value="<%#= form_authenticity_token %>" type="hidden">
-  
   <input name="_method" value="patch" type="hidden"> -->
+<%#= form_with(url: movie_path(@movie), method: :patch) do %>
+<%= form_with(model: @movie, method: :patch) do |form| %>
 
   <div>
-    <%= label_tag  :title_box %>
-    <%= text_field_tag "movie[title]", id: "Title"  %>
+    <%#= label_tag  :title_box %>
+    <%#= text_field_tag "movie[title]", id: "Title"  %>
     <!--<input type="text" id="title_box" name="query_title" value="<%#= @the_movie.title %>">-->
+    <%=form.label :title%>
+    <%=form.text_field :title%>
   </div>
 
   <div>
    <!-- <label for="description_box">
       Description
     </label> -->
-    <%= label_tag :description %>
-    <%= text_area_tag "movie[description]", id: "Description", rows: 3 %>
+    <%#= label_tag :description %>
+    <%#= text_area_tag "movie[description]", id: "Description", rows: 3 %>
     <!--<textarea  id="description_box" name="query_description" rows="3"><%#= @the_movie.description %></textarea>-->
+    <%= form.label :description %>
+    <%= form.text_area :description %>  
   </div>
 
-  <%= button_tag "Update movie"%>
+
   <!--<button>
     Create movie
   </button>-->
+  <%#= button_tag "Update movie"%>
+  <%= form.button "Update movie"%>
 
 <% end %>
