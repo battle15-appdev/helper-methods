@@ -1,6 +1,6 @@
 <h1>New movie</h1>
 
-<% @the_movie.errors.full_messages.each do |message| %>
+<% @movie.errors.full_messages.each do |message| %>
   <p style="color: red;"><%= message %></p>
 <% end %>
 
@@ -12,19 +12,21 @@
       Title
     </label> -->
 
-    <%= label_tag  :title_box, "Title"%>
-    <%= text_field_tag :query_title, @the_movie.title, id: "title_box"  %>
+    <%#= label_tag  :title, "Title"%>
+    <%= label_tag  :title %>
+    <%= text_field_tag :title, @movie.title, id: "title"  %>
 
-    <!--<input type="text" id="title_box" name="query_title" value="<%= @the_movie.title %>">-->
+    <!--<input type="text" id="title_box" name="query_title" value="<%#= @the_movie.title %>">-->
   </div>
 
   <div>
    <!-- <label for="description_box">
       Description
     </label> -->
-    <%= label_tag :description_box, "Description" %>
-    <%= text_area_tag :query_description, @the_movie.description, id: "description_box", rows: 3 %>
-    <!--<textarea  id="description_box" name="query_description" rows="3"><%= @the_movie.description %></textarea>-->
+    <%#= label_tag :description, "Description" %>
+    <%= label_tag :description %>
+    <%= text_area_tag :description, @movie.description, id: "description", rows: 3 %>
+    <!--<textarea  id="description_box" name="query_description" rows="3"><%#= @the_movie.description %></textarea>-->
   </div>
   <%= button_tag "Create movie"%>
   <!--<button>
@@ -40,7 +42,7 @@
       Title
     </label>
 
-    <input type="text" id="title_box" name="query_title" value="<%= @the_movie.title %>">
+    <input type="text" id="title_box" name="query_title" value="<%#= @the_movie.title %>">
   </div>
 
   <div>
@@ -48,7 +50,7 @@
       Description
     </label>
 
-    <textarea id="description_box" name="query_description" rows="3"><%= @the_movie.description %></textarea>
+    <textarea id="description_box" name="query_description" rows="3"><%#= @the_movie.description %></textarea>
   </div>
 
   <button>
