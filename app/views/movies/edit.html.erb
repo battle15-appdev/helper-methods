@@ -12,7 +12,7 @@
 
   <div>
     <%= label_tag  :title_box %>
-    <%= text_field_tag :title, @movie.title, id: "Title"  %>
+    <%= text_field_tag "movie[title]", id: "Title"  %>
     <!--<input type="text" id="title_box" name="query_title" value="<%#= @the_movie.title %>">-->
   </div>
 
@@ -21,7 +21,7 @@
       Description
     </label> -->
     <%= label_tag :description %>
-    <%= text_area_tag :description, @movie.description, id: "Description", rows: 3 %>
+    <%= text_area_tag "movie[description]", id: "Description", rows: 3 %>
     <!--<textarea  id="description_box" name="query_description" rows="3"><%#= @the_movie.description %></textarea>-->
   </div>
 
