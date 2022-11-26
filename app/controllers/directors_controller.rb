@@ -15,7 +15,10 @@ class DirectorsController < ApplicationController
       end
     end
 
+  def show
+    @director = Director.find(params.fetch(:id))
 
+  end 
 def create
   director_attriibutes = params.require(:director).permit( :name, :dob, :bio)
   @director = Director.new(director_attriibutes)
