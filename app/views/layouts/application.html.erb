@@ -11,6 +11,16 @@
   </head>
 
   <body>
+    <div>
+    <ul>
+      <li>
+      <%= link_to "Movies", movies_path %>
+      </li>
+      <li>
+      <%= link_to "Directors", directors_path%>
+      </li>
+    </ul>
+    </div>
     <div style="color: green;">
       <%= notice %>
     </div>
@@ -18,7 +28,7 @@
     <div style="color: red;">
       <%= alert %>
     </div>
-    
+  
     <%= yield %>
   </body>
 </html>

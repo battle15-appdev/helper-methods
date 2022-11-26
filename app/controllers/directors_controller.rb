@@ -19,6 +19,7 @@ class DirectorsController < ApplicationController
     @director = Director.find(params.fetch(:id))
 
   end 
+
   def create
     director_attributes = params.require(:director).permit( :name, :dob, :bio)
     @director = Director.new(director_attributes)
@@ -33,7 +34,6 @@ class DirectorsController < ApplicationController
 
   def edit
     @director = Director.find(params.fetch(:id))
-
   end
 
   def update
